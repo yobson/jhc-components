@@ -1,6 +1,7 @@
 module FindFixpoint(Ms, getVal, solve) where
 
 import Array
+import Control.Monad
 import Control.Monad.Writer
 import Control.Applicative
 import Data.Array.IO

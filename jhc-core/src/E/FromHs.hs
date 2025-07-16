@@ -6,9 +6,10 @@ module E.FromHs(
     getMainFunction
     ) where
 
+import Control.Monad
+import Control.Monad.Except
 import Char
 import Control.Applicative(Applicative)
-import Control.Monad.Error
 import Control.Monad.Identity
 import Control.Monad.RWS hiding (Alt)
 import List(isPrefixOf,nub)
@@ -315,7 +316,7 @@ data CeEnv = CeEnv {
     }
 
 newtype C a = Ce (RWST CeEnv [Warning] Int IO a)
-    deriving(Monad,Applicative,Functor,MonadIO,MonadReader CeEnv,MonadState Int,MonadError IOError, MonadFail)
+    deriving(Monad,Applicative,Functor,MonadIO,MonadReader CeEnv,MonadState Int, MonadError (IOError), MonadFail)
 
 instance MonadWarn C where
     addWarning w = liftIO (addWarning w)

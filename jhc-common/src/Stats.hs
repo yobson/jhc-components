@@ -43,6 +43,7 @@ import Prelude hiding(null)
 import System.IO.Unsafe
 import qualified Data.Map as Map
 import qualified Prelude(null)
+import Control.Monad.Fix
 
 import StringTable.Atom
 import qualified Doc.Chars as C

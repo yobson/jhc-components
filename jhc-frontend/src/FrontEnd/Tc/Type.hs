@@ -47,6 +47,8 @@ import Name.Name
 import Name.Names
 import Support.FreeVars
 import Support.Tickle
+import Data.Monoid
+import Control.Monad
 
 type Sigma' = Sigma
 type Tau' = Tau

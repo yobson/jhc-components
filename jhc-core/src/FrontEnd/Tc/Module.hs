@@ -1,5 +1,6 @@
 module FrontEnd.Tc.Module (tiModules,TiData(..)) where
 
+import Control.Monad
 import Control.Monad.Writer
 import Data.Char
 import Text.PrettyPrint.HughesPJ as PPrint

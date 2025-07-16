@@ -10,6 +10,7 @@ module E.Demand(
     lazy
     ) where
 
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer hiding(Product(..), Alt)
 import Data.Binary

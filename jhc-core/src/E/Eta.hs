@@ -11,6 +11,7 @@ module E.Eta(
     etaReduce
     ) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.State
 import Control.Monad.Writer

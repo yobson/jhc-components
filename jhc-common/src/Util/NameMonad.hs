@@ -1,5 +1,7 @@
 module Util.NameMonad(NameMonad(..),GenName(..),NameMT,runNameMT,runNameMT',freeNames,mixInt,mixInt3,hashInt) where
 
+import Control.Monad
+import Control.Monad.Fix
 import Control.Monad.State
 import Control.Applicative
 import Data.Bits

@@ -3,6 +3,7 @@
 
 module FrontEnd.Exports(determineExports,ModInfo(..)) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Data.List
 import Data.Maybe

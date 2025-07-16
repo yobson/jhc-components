@@ -33,7 +33,7 @@ module Options(
     flagOpt
     ) where
 
-import Control.Monad.Error()    -- IO MonadPlus instance
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.Reader
 import Data.List(nub)

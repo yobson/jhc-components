@@ -1,5 +1,6 @@
 module Grin.Whiz(whiz, fizz, WhizState, whizState, normalizeGrin,normalizeGrin', applySubstE, applySubst, whizExps) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.State
 import Control.Monad.Writer

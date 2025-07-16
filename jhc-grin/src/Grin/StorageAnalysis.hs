@@ -1,5 +1,6 @@
 module Grin.StorageAnalysis(storeAnalyze) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.Writer
 import Data.Maybe

@@ -2,7 +2,7 @@
 {-# LINE 1 "src/E/CPR.hs" #-}
 module E.CPR(Val(..), cprAnalyzeDs, cprAnalyzeProgram) where
 
-import Control.Monad.Writer(runWriter,tell,Monoid(..))
+import Control.Monad.Writer(runWriter,tell)
 import Data.Binary
 import Data.Monoid()
 import Data.Typeable

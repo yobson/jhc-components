@@ -1,5 +1,6 @@
 module FrontEnd.Tc.Main (tiExpr, tiProgram, makeProgram, isTypePlaceholder ) where
 
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer
 import Data.Graph(stronglyConnComp, SCC(..))

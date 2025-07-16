@@ -1,5 +1,6 @@
 module Support.IniParse(parseIniFiles) where
 
+import Control.Monad
 import Control.Monad.State
 import Data.Char
 import Data.List

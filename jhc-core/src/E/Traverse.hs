@@ -10,6 +10,7 @@ module E.Traverse(
     runRename
     ) where
 
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer.Strict hiding (Alt)
 import Data.Maybe

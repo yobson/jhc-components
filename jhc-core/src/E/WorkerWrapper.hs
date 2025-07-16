@@ -1,5 +1,6 @@
 module E.WorkerWrapper(performWorkWrap,workWrapProgram) where
 
+import Control.Monad
 import Control.Monad.Writer.Strict hiding(Product(..), Alt)
 import Maybe
 

@@ -21,6 +21,7 @@ import Name.Name
 import Name.Names
 import Name.VConsts
 import Util.Gen
+import Control.Monad
 
 isWHNF ELit {} = True
 isWHNF ELam {} = True

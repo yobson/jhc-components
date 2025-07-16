@@ -13,6 +13,7 @@ module E.TypeCheck(
     typeInfer'
     ) where
 
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer hiding (Alt)
 import qualified Data.Map as Map

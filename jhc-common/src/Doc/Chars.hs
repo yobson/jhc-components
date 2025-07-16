@@ -8,7 +8,7 @@ import Doc.DocLike
 ulCorner, llCorner, urCorner, lrCorner, rTee, lTee, bTee, tTee, hLine,
  vLine, plus, s1, s9, diamond, ckBoard, degree, plMinus, bullet, lArrow,
  rArrow, dArrow, uArrow, board, lantern, block, s3, s7, lEqual, gEqual,
- pi, nEqual, sterling, coloncolon, alpha, beta, lambda, forall, exists,
+ pi, nEqual, sterling, coloncolon, alpha, beta, lambda, forall', exists,
  box, bot, bottom, top, pI, lAmbda, star, elem, notElem, and, or, sqoparen, sqcparen  :: TextLike a => a
 
 ulCorner  = char $ chr 0x250C
@@ -51,7 +51,7 @@ beta     = char $ chr 0x03b2  -- β
 
 
 lambda   = char $ chr 0x03bb  -- λ
-forall   = char $ chr 0x2200  -- ∀
+forall'   = char $ chr 0x2200  -- ∀
 exists   = char $ chr 0x2203  -- ∃
 box      = char $ chr 0x25a1  -- □
 

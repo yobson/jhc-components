@@ -1,5 +1,6 @@
 module E.LambdaLift(lambdaLift,staticArgumentTransform)  where
 
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer
 import Data.IORef

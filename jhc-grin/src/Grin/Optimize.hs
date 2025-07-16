@@ -1,5 +1,6 @@
 module Grin.Optimize(grinPush,grinSpeculate) where
 
+import Control.Monad
 import Control.Monad.State
 import List
 import qualified Data.Set as Set

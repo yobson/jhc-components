@@ -14,6 +14,7 @@ module Util.Interact(
     runInteractions,
     emptyInteract) where
 
+import Control.Monad
 import Char
 import Control.Monad.Identity
 import List

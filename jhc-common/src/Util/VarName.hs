@@ -9,10 +9,12 @@ module Util.VarName(
     maybeLookupName,
     newLookupName) where
 
+import Control.Monad
 import Control.Monad.State
 import Control.Monad.Identity
 import Control.Applicative
 import qualified Data.Map.Strict as Map
+import Control.Monad.Fix
 
 newtype VarNameT nc ni no m a = VarName (StateT (Map.Map ni no, Map.Map nc Int) m a)
     deriving(Monad, MonadTrans, Functor, MonadFix, MonadPlus, MonadIO, Applicative, Alternative)

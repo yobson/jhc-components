@@ -1,5 +1,6 @@
 module Grin.HashConst(newConst,HcHash(),HcNode(..),toList,emptyHcHash) where
 
+import Control.Monad
 import Control.Monad.State
 import qualified Data.Map as Map
 import qualified Data.Set as Set

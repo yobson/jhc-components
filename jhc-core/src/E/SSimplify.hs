@@ -12,6 +12,7 @@ module E.SSimplify(
     emptySimplifyOpts
     ) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Data.Maybe
 import Data.Typeable

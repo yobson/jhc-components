@@ -2,6 +2,7 @@ module Grin.Noodle where
 
 -- various routines for manipulating and exploring grin code.
 
+import Control.Monad
 import Control.Monad.Writer
 import qualified Data.Set as Set
 

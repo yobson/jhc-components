@@ -4,6 +4,7 @@
 {-# LANGUAGE RecordWildCards,ViewPatterns  #-}
 module C.FromGrin2(compileGrin) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.RWS(asks,tell,local,get,runRWST,RWST,MonadState(..),MonadWriter(..),MonadReader(..))
 import Data.Char

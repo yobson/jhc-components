@@ -3,7 +3,8 @@
 
 module E.TypeAnalysis(typeAnalyze, Typ(),expandPlaceholder) where
 
-import Control.Monad.Error
+import Control.Monad
+import Control.Monad.Except
 import Control.Monad.Identity
 import Control.Monad.State
 import Data.Maybe
@@ -240,7 +241,7 @@ getTyp kind dataTable vm = f (10::Int) kind vm where
          else return $ ELit (updateLit dataTable litCons { litName = h, litArgs = as', litType = kind })
     f _ _ _  = fail "getTyp: not constant type"
 
-specializeProgram :: (Stats.MonadStats m) =>
+specializeProgram :: (MonadFail m, Stats.MonadStats m) =>
     Bool                       -- ^ do specialization
     -> (Set.Set (Module,Int))  -- ^ unused rules
     -> (Set.Set TVr)           -- ^ unused values
@@ -280,12 +281,8 @@ specializeComb True SpecEnv { senvDataTable = dataTable }  comb | needsSpec = an
         return (nc,msingleton tvr (fsts vs))
 specializeComb _ _ comb = return (comb,mempty)
 
-instance Error () where
-    noMsg = ()
-    strMsg _ = ()
-
-evalErrorT :: Monad m => a -> ErrorT () m a -> m a
-evalErrorT err action = liftM f (runErrorT action) where
+evalErrorT :: Monad m => a -> ExceptT () m a -> m a
+evalErrorT err action = liftM f (runExceptT action) where
     f (Left _) = err
     f (Right x) = x
 
@@ -318,7 +315,7 @@ caseCast t ty e = evalState  (f t ty e) (newIds (freeIds e),[]) where
         put (ns,(t,e):es)
         return t
 
-specAlt :: Stats.MonadStats m => SpecEnv -> Alt E -> m (Alt E)
+specAlt :: (MonadFail m, Stats.MonadStats m) => SpecEnv -> Alt E -> m (Alt E)
 specAlt env@SpecEnv { senvDataTable = dataTable } (Alt ~lc@LitCons { litArgs = ts } e) = ans where
     f xs = do
         ws <- forM xs $ \t -> evalErrorT id $ do
@@ -335,7 +332,7 @@ specAlt env@SpecEnv { senvDataTable = dataTable } (Alt ~lc@LitCons { litArgs = t
 isUnused SpecEnv { senvUnusedVars = unusedVars } v =
     v `member` unusedVars && isJust (Info.lookup $ tvrInfo v :: Maybe Typ)
 
-specBody :: Stats.MonadStats m => Bool -> SpecEnv -> E -> m E
+specBody :: (MonadFail m, Stats.MonadStats m) => Bool -> SpecEnv -> E -> m E
 --specBody _ env e | (EVar h,as) <- fromAp e, isUnused env h  = do
 --    Stats.mtick $ "Specialize.delete.{" ++ pprint h ++ "}"
 --    return $ foldl EAp (EError ("Unused: " ++ pprint h) (getType h)) as

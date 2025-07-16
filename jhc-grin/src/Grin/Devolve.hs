@@ -1,5 +1,6 @@
 module Grin.Devolve(twiddleGrin,devolveTransform) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.RWS
 import Data.Functor

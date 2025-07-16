@@ -2,6 +2,7 @@
 {-# LINE 1 "src/Grin/SSimplify.hs" #-}
 module Grin.SSimplify(simplify,explicitRecurse) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.Reader
 import Control.Monad.State

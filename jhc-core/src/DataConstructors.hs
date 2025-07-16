@@ -44,6 +44,7 @@ module DataConstructors(
     updateLit
     ) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.Writer(tell,execWriter)
 import Data.Maybe

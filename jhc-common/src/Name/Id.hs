@@ -35,6 +35,8 @@ module Name.Id(
     runIdNameT
     )where
 
+import Control.Monad
+import Control.Monad.Fix
 import Control.Monad.Reader
 import Control.Monad.State
 import Control.Applicative

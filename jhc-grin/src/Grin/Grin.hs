@@ -53,6 +53,7 @@ module Grin.Grin(
     valIsNF
     ) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Data.Char
 import Data.Monoid(Monoid(..))

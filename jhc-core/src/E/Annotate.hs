@@ -1,5 +1,6 @@
 module E.Annotate where
 
+import Control.Monad
 import Control.Monad.Reader
 import Data.Monoid hiding (Alt)
 import qualified Data.Traversable as T

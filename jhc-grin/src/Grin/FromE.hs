@@ -1,6 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Grin.FromE(compile) where
 
+import Control.Monad
 import Control.Monad.Reader
 import Data.Graph(stronglyConnComp, SCC(..))
 import Data.IORef

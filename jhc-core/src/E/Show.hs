@@ -1,5 +1,6 @@
 module E.Show(ePretty,render,prettyE) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Data.Char(chr)
 import Data.Maybe
@@ -149,9 +150,9 @@ allocTVr _ action = action
 collectAbstractions e0 = go e0 [] where
     go e1@(EPi tvr e)  xs | tvrIdent tvr == emptyId          = done e1 xs
                           | not (sortKindLike (tvrType tvr)) = go e ((UC.pI,     tvr, True) :xs)
-                          | tvrType tvr /= eStar             = go e ((UC.forall, tvr, True) :xs)
+                          | tvrType tvr /= eStar             = go e ((UC.forall', tvr, True) :xs)
                           | dump FD.EVerbose || tvrIdent tvr `member` (freeVars e::IdSet)
-                                                             = go e ((UC.forall, tvr, False):xs)
+                                                             = go e ((UC.forall', tvr, False):xs)
                           | otherwise                        = done e1 xs
     go e1@(ELam tvr e) xs | tvrType tvr == eStar             = go e ((UC.lAmbda, tvr, False):xs)
                           | sortKindLike (tvrType tvr)       = go e ((UC.lAmbda, tvr, True) :xs)

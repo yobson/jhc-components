@@ -6,6 +6,8 @@ import Control.Monad.Reader
 import Control.Monad.State
 import Data.Unique
 import GenUtil
+import Control.Monad
+import Control.Monad.Fix
 
 instance {-# OVERLAPPING #-} UniqueProducer IO where
     newUniq = do

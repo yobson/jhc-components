@@ -35,6 +35,7 @@ See Name.Id.newId for more information.
 
 -}
 
+import Control.Monad
 import Control.Monad.Reader
 import qualified Data.Set as Set
 import qualified Data.Traversable as T

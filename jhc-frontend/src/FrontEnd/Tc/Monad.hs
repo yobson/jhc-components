@@ -80,6 +80,7 @@ import Support.CanType
 import Support.FreeVars
 import Support.Tickle
 import Util.Fail
+import Control.Monad.Fix
 import qualified FlagDump as FD
 import {-# SOURCE #-} FrontEnd.Tc.Class(simplify)
 

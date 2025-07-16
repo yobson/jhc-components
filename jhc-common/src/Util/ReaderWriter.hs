@@ -2,6 +2,7 @@
 module Util.ReaderWriter(ReaderWriter(),runReaderWriter) where
 
 import Data.Monoid
+import Control.Monad
 import Control.Monad.Reader
 import Control.Monad.Writer
 import Control.Applicative

@@ -2,6 +2,7 @@
 
 module E.Main(processInitialHo,processDecls,compileWholeProgram,dumpRules) where
 
+import Control.Monad
 import Control.Exception
 import Control.Monad.Identity
 import Control.Monad.Reader

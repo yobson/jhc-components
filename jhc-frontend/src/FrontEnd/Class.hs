@@ -31,7 +31,8 @@ module FrontEnd.Class(
     ) where
 
 import Control.Monad.Identity
-import Control.Monad.Writer(Monoid(..))
+import Control.Monad.Writer
+import Control.Monad
 import Data.Generics(mkQ,something)
 import Data.List(nub)
 import Data.Maybe

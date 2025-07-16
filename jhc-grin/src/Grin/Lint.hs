@@ -5,6 +5,7 @@ module Grin.Lint(
     dumpGrin
     ) where
 
+import Control.Monad
 import Control.Exception
 import Control.Monad.Reader
 import Data.Monoid

@@ -7,6 +7,8 @@ import Data.List
 import Data.Maybe
 import Directory
 import Text.ParserCombinators.ReadP
+import Control.Monad
+import Control.Monad.Fix
 
 import GenUtil hiding(replicateM, intercalate)
 

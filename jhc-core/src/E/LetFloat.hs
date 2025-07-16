@@ -6,6 +6,7 @@ module E.LetFloat(
     floatInward
   ) where
 
+import Control.Monad
 import Control.Monad.Identity
 import Control.Monad.Reader
 import Control.Monad.Writer hiding (Alt)

@@ -7,7 +7,7 @@
 {
 module FrontEnd.Lex.Parser (parse,parseDecls,parseStmt,parseModule) where
 
-import Control.Monad.Error
+import Control.Monad
 import FrontEnd.HsSyn
 import FrontEnd.Lex.Lexer
 import FrontEnd.Lex.ParseMonad
