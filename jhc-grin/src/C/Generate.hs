@@ -597,7 +597,7 @@ generateC fs ss = ans where
     G ga = do
         fs <- mapM drawFunction fs
         let (protos,bodys) = unzip fs
-        let shead = vcat [ text "struct" <+> tshow (structureName s) <> (if structureAligned s then text " A_ALIGNED" else empty) <> text ";" | s <- ss ]
+        let shead = vcat [ text "struct" <+> (if structureAligned s then text "A_ALIGNED " else empty) <> tshow (structureName s) <> text ";" | s <- ss ]
         shead2 <- declStructs ss
         return (shead $$ line $$ shead2 $$ vcat protos, line $$  vsep bodys)
     ((hd,fns),(_,ass),_written) = runRWS ga emptyEnv (1,Map.empty)
