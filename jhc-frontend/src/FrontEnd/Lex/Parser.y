@@ -1,4 +1,4 @@
-{-# OPTIONS_GHC -w -XNoOverloadedStrings #-} {- -*- Haskell -*- -}
+{- -*- Haskell -*- -}
 
 -- Since in general LALR parser generators produce horrible error messages, we
 -- try to be as permissive as possible in this parser and then produce more
