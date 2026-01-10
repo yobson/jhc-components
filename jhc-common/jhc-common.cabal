@@ -13,6 +13,7 @@ extra-source-files:
   src/StringTable/StringTable_cbits.h
   src/StringTable/StringTable_cbits.c
   hs_src_config.h
+  embed/*
 
 library
   exposed-modules:

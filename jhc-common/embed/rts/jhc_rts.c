@@ -165,7 +165,11 @@ eval(sptr_t s)
 int
 main(int argc, char *argv[])
 {
+  #if JHC_isRawHardware // Seems to break pi pico
+        hs_init(0, NULL);
+  #else
         hs_init(&argc, &argv);
+  #endif
         if (jhc_setjmp(&jhc_uncaught))
                 jhc_error("Uncaught Exception");
         else
